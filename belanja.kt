@@ -11,9 +11,17 @@ fun barang(item : String):Int{
     } 
 }
 
+fun diskon(harga: Int, diskon: Double): Int{
+    return (harga * diskon).toInt()
+    
+}
+
 fun main() {
-    val namaBarang = "Kaos"
+    val namaBarang = "Gamis"
+    val diskon = 0.1
     val harga = barang(namaBarang)
-    println("Baju yang anda beli $namaBarang harganya adalah Rp. $harga")
+    val hargaDiskon= if (harga>100000) diskon(harga,diskon) else 0
+    println("Baju yang anda beli: \nNama barang\t: $namaBarang \nHarga Barang\t: Rp. $harga")
+    println("Diskon \t\t: Rp. $hargaDiskon")
     
 }
